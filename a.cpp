@@ -113,7 +113,6 @@ public:
 
       while (getline(s, word, ','))
       {
-
         row.push_back(word);
       }
       string acc2 = row[0];
@@ -130,12 +129,7 @@ public:
         cout << "DOAC : " << row[6] << "\n";
         Option();
       }
-      else
-      {
-        cout << "You entered wrong account number or password" << endl;
-        cout << "Try again" << endl;
-        login();
-      }
+      
     }
     fin.close();
   }
@@ -149,8 +143,7 @@ public:
     int bal = 0;
     cout << "Enter your details" << endl;
     fout.open("Acc.csv", ios::out | ios::app);
-
-    
+   
     cout << "Enter the Acc number: ";
 
     int flag = 1;
@@ -203,7 +196,6 @@ public:
 
     getline(cin, dob);
     cout << "Age:";
-    // cin.sync();
     cin >> age;
 
     cout << "Phone number:";
@@ -247,8 +239,6 @@ public:
     cout << "\n";
     password[i] = '\0'; // Null-terminate the password string
     cin.sync();
-    // cout<<"Deposit money:";
-    // cin>>bal;
 
     fout << acc_no << "," << name << "," << dob << "," << age << "," << phone << "," << acc_type << "," << date << "," << password << "," << bal << endl;
 
@@ -316,7 +306,6 @@ public:
         row.push_back(word);
       }
       depo = row[1];
-      // fin.seekg(0, ios::beg);
 
       acc1 = row[0];
       int row_size = row.size();
@@ -519,7 +508,7 @@ public:
     }
 
     cout << "Enter change: ";
-    // cin >> change;
+
     getline(cin, change);
     getline(cin, change);
     cin.clear();
@@ -617,7 +606,6 @@ public:
     string acc1, y;
     int i, choice;
     int index = 1;
-    // row.clear();
 
     cout << "Enter Amount: ";
     cin >> amt;
@@ -636,7 +624,6 @@ public:
         row.push_back(word);
       }
       depo = row[1];
-      // fin.seekg(0, ios::beg);
 
       acc1 = row[0];
       int row_size = row.size();
@@ -714,12 +701,6 @@ public:
     // renaming the updated file with the existing file name
     rename("balancenew.csv", "balance.csv");
 
-    // fout.open("History.csv", ios::app);
-    // if(count==1){
-    //   fout<<acc_no<<","<<Accnum2<<","<<""<<","<<amt<<","<<y<<","<<dt;
-    // }
-
-    // fout.close();
     Option();
   }
 
